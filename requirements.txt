@@ -1,0 +1,30 @@
+# Install into Python 3.9.
+# Core training, inference, and analysis dependencies.
+
+matplotlib==3.8.4
+medpy==0.5.2
+ml-collections==0.1.1
+natsort==8.4.0
+nibabel==5.3.2
+numpy==1.26.4
+pandas==2.2.2
+scipy==1.11.1
+seaborn==0.13.2
+SimpleITK==2.4.0
+statannotations==0.7.1
+tensorboardX==2.6.2.2
+timm==1.0.8
+torch==2.0.1
+torchaudio==2.0.2
+torchvision==0.15.2
+tqdm==4.65.2
+
+# MONAI is pinned from source because this repo was developed against that snapshot.
+git+https://github.com/Project-MONAI/MONAI.git@07de215caf79dabec20ac53fb38d9f2df36f182a#egg=monai
+
+# Analysis and metric helpers.
+git+https://github.com/google-deepmind/surface-distance@ee651c80e11ab5fcc3d1b0c1c6e7bbc6fb4c987c#egg=Surface-Distance-Based-Measures
+
+# Optional utilities used by specific scripts.
+platipy==0.7.2
+dcmrtstruct2nii==5

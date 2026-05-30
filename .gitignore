@@ -1,0 +1,80 @@
+# ---------------------------------------------------------------------------
+# OS / editor / Python runtime
+# ---------------------------------------------------------------------------
+.DS_Store
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ---------------------------------------------------------------------------
+# Local environments and machine-specific config
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+env/
+local_config.*
+
+# ---------------------------------------------------------------------------
+# Sensitive/private data and manifests
+# ---------------------------------------------------------------------------
+/data/*
+!/data/README.md
+/analysis/metadata/*
+!/analysis/metadata/README.md
+/analysis/txseg_mrn_redaction_map.md
+
+# Medical images, masks, dose files, and DICOM exports.
+*.nii
+*.nii.gz
+*.nrrd
+*.mha
+*.mhd
+*.dcm
+*.dicom
+*.npy
+*.npz
+
+# ---------------------------------------------------------------------------
+# Model checkpoints, logs, and generated outputs
+# ---------------------------------------------------------------------------
+/runs/*
+!/runs/README.md
+/pretrained_models/*
+!/pretrained_models/README.md
+!/pretrained_models/__init__.py
+/analysis/results/
+/platipy_results/
+
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.h5
+*.hdf5
+events.out.tfevents*
+*.log
+wandb/
+mlruns/
+
+# Local archives or submission bundles should be attached separately, not pushed.
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# ---------------------------------------------------------------------------
+# Manuscript/package artifacts and local build scripts
+# ---------------------------------------------------------------------------
+/paper_writeup/
+/scripts/
+/analysis/stats/append_supplemental_e_to_docx.py
+/analysis/stats/generate_supplemental_e.py
