@@ -1,5 +1,6 @@
 # SMIT-HeartSubSeg
 
+[![phiRO](https://img.shields.io/badge/phiRO%202026-Paper-blue)](https://www.sciencedirect.com/science/article/pii/S2405631626001119)
 [![arXiv](https://img.shields.io/badge/arXiv-2505.10855-b31b1b.svg)](https://arxiv.org/abs/2505.10855)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/)
@@ -122,11 +123,13 @@ For a folder-level map, see [`analysis/README.md`](analysis/README.md).
 If you use this code, please cite:
 
 ```bibtex
-@article{rangnekar2025generalizable,
+@article{rangnekar2026transformer,
   title={Transformer-based cardiac substructure segmentation from contrast and non-contrast computed tomography for radiotherapy planning},
-  author={Rangnekar, Aneesh and Mankuzhy, Nikhil and Willmann, Jonas and Choi, Chloe and Wu, Abraham and Thor, Maria and Rimner, Andreas and Veeraraghavan, Harini},
-  journal={arXiv preprint arXiv:2505.10855},
-  year={2025}
+  author={Rangnekar, Aneesh and Mankuzhy, Nikhil and Willmann, Jonas and Choi, Chloe Min Seo and Wu, Abraham and Thor, Maria and Rimner, Andreas and Veeraraghavan, Harini},
+  journal={Physics and Imaging in Radiation Oncology},
+  pages={101011},
+  year={2026},
+  publisher={Elsevier}
 }
 ```
 
