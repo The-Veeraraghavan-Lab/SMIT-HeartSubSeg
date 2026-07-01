@@ -91,11 +91,15 @@ Breast cohort inference:
 bash run_breast_inference.sh
 ```
 
-Both scripts call `run_smit_segmentation.py` and can be customized through environment variables such as `PRETRAINED_MODEL_PATH`, `OUTPUT_DIR`, `DATASET_JSON`, and `DATASET_SPLIT`.
+Both scripts call `run_smit_segmentation.py` and can be customized through environment variables such as `PRETRAINED_MODEL_PATH`, `OUTPUT_DIR`, `DATASET_JSON`, `DATASET_SPLIT`, `NORM_NAME`, and `OUT_CHANNELS`. By default, they load the Balanced checkpoint at `runs/run1_plus_cnc64_bnorm/model_final.pt` with batch normalization and 10 output channels.
 
-Pretrained weights (for self-supervised models) and fine-tuned weights are available for download [here](https://mskcc.box.com/s/fcv2ehp5cdtev08x8h5t2trmqjh86z50). For pretrained weights, place the downloaded `.pth` file under `pretrained_models/` and set `PRETRAINED_MODEL_PATH` accordingly.
+Self-supervised pretraining weights and fine-tuned inference checkpoints are available for download [here](https://mskcc.box.com/s/it3pbmmi9ctd53uej2jc9du6jhyd2rng). Place self-supervised `.pth` files under `pretrained_models/` for training with `--use_ssl_pretrained`. Place fine-tuned `.pt` checkpoints under `runs/<run_name>/` and set `PRETRAINED_MODEL_PATH` to the desired checkpoint for inference.
 
-The paper models use instance normalization and 1 mm x 1 mm x 3 mm spacing (`SPACE_Z=3.0`). HU intensity is clipped to [−200, 300]. Adjust via the `SPACE_X`/`SPACE_Y`/`SPACE_Z`, `A_MIN`, and `A_MAX` environment variables if your data differs. Generated segmentations are written under `analysis/results/`.
+The Box folder includes the default run checkpoint at `runs/run1_plus_bnorm/model_final.pt` and the Balanced checkpoint at `runs/run1_plus_cnc64_bnorm/model_final.pt`. These `bnorm` checkpoints should be used with `NORM_NAME=batch` and `OUT_CHANNELS=10`.
+
+**Bonus:** the Box folder also includes an updated pericardium-aware checkpoint at `runs/run1_peri_plus_cnc64_inorm/model_final.pt`, trained with pericardium as an additional class. Use this `inorm` checkpoint with `NORM_NAME=instance` and `OUT_CHANNELS=11`.
+
+The paper models use 1 mm x 1 mm x 3 mm spacing (`SPACE_Z=3.0`). HU intensity is clipped to [−200, 300]. Adjust via the `SPACE_X`/`SPACE_Y`/`SPACE_Z`, `A_MIN`, and `A_MAX` environment variables if your data differs. Generated segmentations are written under `analysis/results/`.
 
 ## Scoring
 
